@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="F:\cust_project\CP800X_SDK_PUBULIC\SDK_CP800X_V1010_20260311\app\peripheral_example\SPI_Master\cdk\spim.cdkws">
+  <int Value="0" Name="m_selectedTab"/>
+  <wxString Value="F:\cust_project\CP800X_SDK_PUBULIC\SDK_CP800X_V1010_20260311\app\peripheral_example\SPI_Master\cdk\spim.cdkws" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray"/>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+</Session>
