@@ -23,8 +23,8 @@
 #define BLE_2G4_STACK_VER      (2)
 
 
-
-#define LOG_ENABLE             (ENABLE)
+#define BOOT_OTP 1
+#define LOG_ENABLE             (DISABLE)
 
 
 

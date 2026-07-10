@@ -33,16 +33,20 @@ typedef struct
     void (*long_press_handler)(str_fun_para*);      // 长按触发回调
     str_fun_para long_press_para;                   // 长按参数
     
-    void (*long_release_handler)(str_fun_para*);    // 长按释放回调
-    str_fun_para long_release_para;                 // 长按释放参数
+    // void (*long_release_handler)(str_fun_para*);    // 长按释放回调
+    // str_fun_para long_release_para;                 // 长按释放参数
 } str_key_fun;
+
+#define SHORT_PRESS_THRESHOLD ((uint8_t)5)
+#define LONG_PRESS_THRESHOLD ((uint8_t)70)
+#define STOP_PRESS_THRESHOLD ((uint32_t)60000)
 
 /* 外部变量声明 */
 extern const str_key_fun keys_func_table[];
 
 /* 函数声明 */
 void key_process_init(void);
-void key_process(uint32_t key_value, uint32_t press_time, uint8_t handle_flag);
+void key_process(uint32_t key_value, uint32_t press_time);
 
 #endif
 

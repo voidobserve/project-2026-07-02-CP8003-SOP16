@@ -10,7 +10,7 @@ ProjectPath            :=./
 IntermediateDirectory  :=Obj
 OutDir                 :=$(IntermediateDirectory)
 User                   :=PC
-Date                   :=02/07/2026
+Date                   :=10/07/2026
 CDKPath                :=../../../../../../app/C-Sky/CDK
 ToolchainPath          :=D:/app/C-Sky/CDKRepo/Toolchain/XTGccElfNewlib/V3.4.0/R/
 LinkerName             :=riscv64-unknown-elf-gcc
@@ -87,7 +87,7 @@ Objects=$(Objects0)
 all: $(IntermediateDirectory)/$(OutputFile)
 
 $(IntermediateDirectory)/$(OutputFile):  $(Objects) Always_Link 
-	$(LinkerName) $(OutputSwitch) $(IntermediateDirectory)/$(OutputFile)$(ExeSuffix) $(LinkerNameoption) -Wl,-Map=$(ProjectPath)/Lst/$(OutputFile).map  @$(ObjectsFileList) $(LibraryPathSwitch)D:/english_path_floder/remoter/components/libraries $(LibraryPathSwitch)D:/english_path_floder/remoter/components/libraries/24g/20260121/flash $(LibraryPathSwitch)D:/english_path_floder/remoter/components/libraries/24g  -Wl,--whole-archive $(LibrarySwitch)startlib  $(LibrarySwitch)2g4_base  $(LibrarySwitch)rf2g4   -Wl,--no-whole-archive  $(LinkOptions) $(LibPath) $(Libs) $(LinkOtherFlagsOption)
+	$(LinkerName) $(OutputSwitch) $(IntermediateDirectory)/$(OutputFile)$(ExeSuffix) $(LinkerNameoption) -Wl,-Map=$(ProjectPath)/Lst/$(OutputFile).map  @$(ObjectsFileList) $(LibraryPathSwitch)D:/english_path_floder/remoter24g_0710/components/libraries $(LibraryPathSwitch)D:/english_path_floder/remoter24g_0710/components/libraries/24g/20260121/flash $(LibraryPathSwitch)D:/english_path_floder/remoter24g_0710/components/libraries/24g  -Wl,--whole-archive $(LibrarySwitch)startlib  $(LibrarySwitch)2g4_base  $(LibrarySwitch)rf2g4   -Wl,--no-whole-archive  $(LinkOptions) $(LibPath) $(Libs) $(LinkOtherFlagsOption)
 	-@mv $(ProjectPath)/Lst/$(OutputFile).map $(ProjectPath)/Lst/$(OutputFile).temp && $(READELF) $(ElfInfoSwitch) $(ProjectPath)/Obj/$(OutputFile)$(ExeSuffix) > $(ProjectPath)/Lst/$(OutputFile).map && echo ====================================================================== >> $(ProjectPath)/Lst/$(OutputFile).map && cat $(ProjectPath)/Lst/$(OutputFile).temp >> $(ProjectPath)/Lst/$(OutputFile).map && rm -rf $(ProjectPath)/Lst/$(OutputFile).temp
 	$(OBJCOPY) $(ObjcopySwitch) $(ProjectPath)/$(IntermediateDirectory)/$(OutputFile)$(ExeSuffix)  $(ProjectPath)/Obj/$(OutputFile)$(IHexSuffix) 
 	$(OBJDUMP) $(ObjdumpSwitch) $(ProjectPath)/$(IntermediateDirectory)/$(OutputFile)$(ExeSuffix)  > $(ProjectPath)/Lst/$(OutputFile)$(DisassemSuffix) 

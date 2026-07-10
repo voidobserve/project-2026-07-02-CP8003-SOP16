@@ -77,8 +77,8 @@ int main(void)
 #endif
 
     // ========== 初始化2.4G射频模块 ==========
-    rf_2g4_init();
-    rf_2g4_set_tx_power(5); // 设置发射功率 0dBm
+    rf_2g4_init(); 
+    rf_2g4_set_tx_power(6); // 设置发射功率 
 
     // ========== 初始化遥控器GPIO和按键 ==========
     app_remoter_gpio_init();
@@ -113,8 +113,8 @@ int main(void)
         // 按键扫描在主循环中完成，此处响应按键事件
         if (key_info.handle_flag) {
 
-            key_process(key_info.curr_key, key_info.pressed_time, key_info.handle_flag);
-            key_info.handle_flag = 0x0;
+            key_process(key_info.curr_key, key_info.pressed_time);
+            key_info.handle_flag = 0x00;
         }
 
         /* ========== 休眠检查（50ms周期）========== */
@@ -174,7 +174,7 @@ int main(void)
         }
 
         /* ========== 指示灯闪烁处理 ========== */
-        app_remoter_led_blink();
+        // app_remoter_led_blink();
     }
 
     return 0;

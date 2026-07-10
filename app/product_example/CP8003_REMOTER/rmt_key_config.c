@@ -12,7 +12,7 @@
 #if (PRODUCT_SELECTION == RMT_30KEY)
 const str_key_fun keys_func_table[] = {
     //{键值, 	短按释放回调, 						短按释放参数, 			长按回调,
-    //长按参数, 	 长按释放回调, 						长按释放参数}
+    // 长按参数, 	 长按释放回调, 						长按释放参数}
     // 开关按键：短按-开，长按-绑定组1
     {(PIN21 | PIN0),
      onoff_reverse_handler,
@@ -205,40 +205,40 @@ const str_key_fun keys_func_table[] = {
 const str_key_fun keys_func_table[] = {
     // {键值, 短按释放回调, 短按释放参数, 长按回调, 长按参数, 长按释放回调, 长按释放参数}
     // 旧AK803 28键 public key-value 表：按SOP16物理脚位映射，广播payload只使用 para_a。
-    {(GNDB | PIN21), direct_key_value, {0x11}, direct_key_value, {0x11}, direct_key_value, {0x11}},
-    {(GNDB | PIN20), direct_key_value, {0x12}, direct_key_value, {0x12}, direct_key_value, {0x12}},
-    {(GNDB | PIN19), direct_key_value, {0x13}, direct_key_value, {0x13}, direct_key_value, {0x13}},
-    {(GNDB | PIN18), direct_key_value, {0x14}, direct_key_value, {0x14}, direct_key_value, {0x14}},
+    {(PIN_IDX_MASK_4 | PIN_IDX_MASK_14), direct_key_value, {0x11}, direct_key_value, {0x11}},
+    {(PIN_IDX_MASK_4 | PIN_IDX_MASK_13), direct_key_value, {0x12}, direct_key_value, {0x12}},
+    {(PIN_IDX_MASK_4 | PIN_IDX_MASK_12), direct_key_value, {0x13}, direct_key_value, {0x13}},
+    {(PIN_IDX_MASK_4 | PIN_IDX_MASK_11), direct_key_value, {0x14}, direct_key_value, {0x14}},
 
-    {(PIN15 | PIN21), direct_key_value, {0x21}, direct_key_value, {0x21}, direct_key_value, {0x21}},
-    {(PIN15 | PIN20), direct_key_value, {0x22}, direct_key_value, {0x22}, direct_key_value, {0x22}},
-    {(PIN0 | PIN19), direct_key_value, {0x23}, direct_key_value, {0x23}, direct_key_value, {0x23}},
-    {(PIN0 | PIN18), direct_key_value, {0x24}, direct_key_value, {0x24}, direct_key_value, {0x24}},
+    {(PIN_IDX_MASK_5 | PIN_IDX_MASK_14), direct_key_value, {0x21}, direct_key_value, {0x21}},
+    {(PIN_IDX_MASK_5 | PIN_IDX_MASK_13), direct_key_value, {0x22}, direct_key_value, {0x22}},
+    {(PIN_IDX_MASK_5 | PIN_IDX_MASK_12), direct_key_value, {0x23}, direct_key_value, {0x23}},
+    {(PIN_IDX_MASK_5 | PIN_IDX_MASK_11), direct_key_value, {0x24}, direct_key_value, {0x24}},
 
-    {(PIN1 | PIN21), direct_key_value, {0x31}, direct_key_value, {0x31}, direct_key_value, {0x31}},
-    {(PIN1 | PIN20), direct_key_value, {0x32}, direct_key_value, {0x32}, direct_key_value, {0x32}},
-    {(PIN1 | PIN19), direct_key_value, {0x33}, direct_key_value, {0x33}, direct_key_value, {0x33}},
-    {(PIN1 | PIN18), direct_key_value, {0x34}, direct_key_value, {0x34}, direct_key_value, {0x34}},
+    {(PIN_IDX_MASK_6 | PIN_IDX_MASK_14), direct_key_value, {0x31}, direct_key_value, {0x31}},
+    {(PIN_IDX_MASK_6 | PIN_IDX_MASK_13), direct_key_value, {0x32}, direct_key_value, {0x32}},
+    {(PIN_IDX_MASK_6 | PIN_IDX_MASK_12), direct_key_value, {0x33}, direct_key_value, {0x33}},
+    {(PIN_IDX_MASK_6 | PIN_IDX_MASK_11), direct_key_value, {0x34}, direct_key_value, {0x34}},
 
-    {(PIN8 | PIN21), direct_key_value, {0x41}, direct_key_value, {0x41}, direct_key_value, {0x41}},
-    {(PIN8 | PIN20), direct_key_value, {0x42}, direct_key_value, {0x42}, direct_key_value, {0x42}},
-    {(PIN8 | PIN19), direct_key_value, {0x43}, direct_key_value, {0x43}, direct_key_value, {0x43}},
-    {(PIN8 | PIN18), direct_key_value, {0x44}, direct_key_value, {0x44}, direct_key_value, {0x44}},
+    {(PIN_IDX_MASK_7 | PIN_IDX_MASK_14), direct_key_value, {0x41}, direct_key_value, {0x41}},
+    {(PIN_IDX_MASK_7 | PIN_IDX_MASK_13), direct_key_value, {0x42}, direct_key_value, {0x42}},
+    {(PIN_IDX_MASK_7 | PIN_IDX_MASK_12), direct_key_value, {0x43}, direct_key_value, {0x43}},
+    {(PIN_IDX_MASK_7 | PIN_IDX_MASK_11), direct_key_value, {0x44}, direct_key_value, {0x44}},
 
-    {(PIN7 | PIN21), direct_key_value, {0x51}, direct_key_value, {0x51}, direct_key_value, {0x51}},
-    {(PIN7 | PIN20), direct_key_value, {0x52}, direct_key_value, {0x52}, direct_key_value, {0x52}},
-    {(PIN7 | PIN19), direct_key_value, {0x53}, direct_key_value, {0x53}, direct_key_value, {0x53}},
-    {(PIN7 | PIN18), direct_key_value, {0x54}, direct_key_value, {0x54}, direct_key_value, {0x54}},
+    {(PIN_IDX_MASK_8 | PIN_IDX_MASK_14), direct_key_value, {0x51}, direct_key_value, {0x51}},
+    {(PIN_IDX_MASK_8 | PIN_IDX_MASK_13), direct_key_value, {0x52}, direct_key_value, {0x52}},
+    {(PIN_IDX_MASK_8 | PIN_IDX_MASK_12), direct_key_value, {0x53}, direct_key_value, {0x53}},
+    {(PIN_IDX_MASK_8 | PIN_IDX_MASK_11), direct_key_value, {0x54}, direct_key_value, {0x54}},
 
-    {(PIN6 | PIN21), direct_key_value, {0x61}, direct_key_value, {0x61}, direct_key_value, {0x61}},
-    {(PIN6 | PIN20), direct_key_value, {0x62}, direct_key_value, {0x62}, direct_key_value, {0x62}},
-    {(PIN6 | PIN19), direct_key_value, {0x63}, direct_key_value, {0x63}, direct_key_value, {0x63}},
-    {(PIN6 | PIN18), direct_key_value, {0x64}, direct_key_value, {0x64}, direct_key_value, {0x64}},
+    {(PIN_IDX_MASK_10 | PIN_IDX_MASK_14), direct_key_value, {0x61}, direct_key_value, {0x61}},
+    {(PIN_IDX_MASK_10 | PIN_IDX_MASK_13), direct_key_value, {0x62}, direct_key_value, {0x62}},
+    {(PIN_IDX_MASK_10 | PIN_IDX_MASK_12), direct_key_value, {0x63}, direct_key_value, {0x63}},
+    {(PIN_IDX_MASK_10 | PIN_IDX_MASK_11), direct_key_value, {0x64}, direct_key_value, {0x64}},
 
-    {(PIN0 | PIN21), direct_key_value, {0x01}, direct_key_value, {0x01}, direct_key_value, {0x01}},
-    {(PIN0 | PIN20), direct_key_value, {0x02}, direct_key_value, {0x02}, direct_key_value, {0x02}},
-    {(PIN15 | PIN19), direct_key_value, {0x03}, direct_key_value, {0x03}, direct_key_value, {0x03}},
-    {(PIN15 | PIN18), direct_key_value, {0x04}, direct_key_value, {0x04}, direct_key_value, {0x04}},
+    {(GND_MASK | PIN_IDX_MASK_14), direct_key_value, {0x01}, direct_key_value, {0x01}},
+    {(GND_MASK | PIN_IDX_MASK_13), direct_key_value, {0x02}, direct_key_value, {0x02}},
+    {(GND_MASK | PIN_IDX_MASK_12), direct_key_value, {0x03}, direct_key_value, {0x03}},
+    {(GND_MASK | PIN_IDX_MASK_11), direct_key_value, {0x04}, direct_key_value, {0x04}},
 };
 
 #elif (PRODUCT_SELECTION == RMT_25KEY)
