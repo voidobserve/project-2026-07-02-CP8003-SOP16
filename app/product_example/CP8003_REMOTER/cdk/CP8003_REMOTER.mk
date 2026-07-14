@@ -10,7 +10,7 @@ ProjectPath            :=./
 IntermediateDirectory  :=Obj
 OutDir                 :=$(IntermediateDirectory)
 User                   :=PC
-Date                   :=10/07/2026
+Date                   :=14/07/2026
 CDKPath                :=../../../../../../app/C-Sky/CDK
 ToolchainPath          :=D:/app/C-Sky/CDKRepo/Toolchain/XTGccElfNewlib/V3.4.0/R/
 LinkerName             :=riscv64-unknown-elf-gcc
@@ -46,7 +46,7 @@ PreprocessOnlySwitch   :=-E
 PreprocessOnlyDisableLineSwitch   :=-P
 ObjectsFileList        :=$(IntermediateDirectory)/CP8003_REMOTER.txt
 MakeDirCommand         :=mkdir
-LinkOptions            := -mcpu=e902m  -nostartfiles -Wl,--gc-sections -T"$(ProjectPath)/../../../components/core/e902_2g4_sleep.ld" -pipe 
+LinkOptions            := -mcpu=e902m  -nostartfiles -Wl,--gc-sections -T"$(ProjectPath)/../../../components/core/cp800x_2g4_otp.ld" -pipe 
 LinkOtherFlagsOption   :=--specs=nano.specs -Wl,-Map=$(ProjectPath)/Lst/$(OutputFile).map 
 IncludePackagePath     :=
 IncludeCPath           := $(IncludeSwitch). $(IncludeSwitch).. $(IncludeSwitch)../../../../components/ble/app $(IncludeSwitch)../../../../components/ble/ota_service $(IncludeSwitch)../../../../components/ble/service $(IncludeSwitch)../../../../components/driver $(IncludeSwitch)../../../../components/header $(IncludeSwitch)../../../../components/libraries $(IncludeSwitch)../../../../components/libraries/24g $(IncludeSwitch)../../../../components/libraries/ble $(IncludeSwitch)../../../../components/misc $(IncludeSwitch)../../../../modules/ble_viot $(IncludeSwitch)../../../../modules/hal_clock $(IncludeSwitch)../../../components/ble/app $(IncludeSwitch)../../../components/ble/ota_service $(IncludeSwitch)../../../components/ble/service $(IncludeSwitch)../../../components/ble/v0/utils $(IncludeSwitch)../../../components/core/cp8000 $(IncludeSwitch)../../../components/core/riscv/E902 $(IncludeSwitch)../../../components/core/riscv/E902/cp8000 $(IncludeSwitch)../../../components/core/riscv/E902/t1001 $(IncludeSwitch)../../../components/core/t1001 $(IncludeSwitch)../../../components/driver $(IncludeSwitch)../../../components/header $(IncludeSwitch)../../../components/libraries $(IncludeSwitch)../../../components/libraries/24g $(IncludeSwitch)../../../components/libraries/ble $(IncludeSwitch)../../../components/misc $(IncludeSwitch)../../../modules/ble_viot $(IncludeSwitch)../../../modules/hal_adv $(IncludeSwitch)../../../modules/hal_clock $(IncludeSwitch)../../../modules/hal_sleep $(IncludeSwitch)../app_remoter $(IncludeSwitch)../app_viot_handler $(IncludeSwitch)../key_process $(IncludeSwitch)modules/hal_adv $(IncludeSwitch)modules/hal_clock $(IncludeSwitch)modules/hal_gpio $(IncludeSwitch)modules/hal_sleep $(IncludeSwitch)modules/hal_timer $(IncludeSwitch)../../../peripheral_example/FLASH/  
@@ -66,10 +66,10 @@ CC       :=riscv64-unknown-elf-gcc
 AS       :=riscv64-unknown-elf-gcc
 OBJDUMP  :=riscv64-unknown-elf-objdump
 OBJCOPY  :=riscv64-unknown-elf-objcopy
-CXXFLAGS :=-mcpu=e902m   $(PreprocessorSwitch)BOOT_OTP=0  -Os  -g  -Wall -ffunction-sections -fdata-sections -flto -pipe 
-CFLAGS   :=-mcpu=e902m   $(PreprocessorSwitch)BOOT_OTP=0  -Os  -g  -Wall -ffunction-sections -fdata-sections -flto -pipe 
+CXXFLAGS :=-mcpu=e902m   $(PreprocessorSwitch)BOOT_OTP=1  -Os  -g  -Wall -ffunction-sections -fdata-sections -flto -pipe 
+CFLAGS   :=-mcpu=e902m   $(PreprocessorSwitch)BOOT_OTP=1  -Os  -g  -Wall -ffunction-sections -fdata-sections -flto -pipe 
 ASFLAGS  :=-mcpu=e902m  -Wa,--gstabs -ffunction-sections -fdata-sections -flto -pipe 
-PreprocessFlags  :=-mcpu=e902m   $(PreprocessorSwitch)BOOT_OTP=0  -Os  -g  -Wall -ffunction-sections -fdata-sections -flto -pipe 
+PreprocessFlags  :=-mcpu=e902m   $(PreprocessorSwitch)BOOT_OTP=1  -Os  -g  -Wall -ffunction-sections -fdata-sections -flto -pipe 
 
 
 Objects0=$(IntermediateDirectory)/CP8003_REMOTER_main$(ObjectSuffix) $(IntermediateDirectory)/CP8003_REMOTER_app_isr$(ObjectSuffix) $(IntermediateDirectory)/CP8003_REMOTER_rmt_key_config$(ObjectSuffix) $(IntermediateDirectory)/app_remoter_app_remoter$(ObjectSuffix) $(IntermediateDirectory)/app_viot_handler_app_viot_handler$(ObjectSuffix) $(IntermediateDirectory)/key_process_key_process$(ObjectSuffix) $(IntermediateDirectory)/driver_driver_clkcal$(ObjectSuffix) $(IntermediateDirectory)/driver_driver_flash$(ObjectSuffix) $(IntermediateDirectory)/driver_driver_gpadc$(ObjectSuffix) $(IntermediateDirectory)/driver_driver_gpio$(ObjectSuffix) \
@@ -87,7 +87,7 @@ Objects=$(Objects0)
 all: $(IntermediateDirectory)/$(OutputFile)
 
 $(IntermediateDirectory)/$(OutputFile):  $(Objects) Always_Link 
-	$(LinkerName) $(OutputSwitch) $(IntermediateDirectory)/$(OutputFile)$(ExeSuffix) $(LinkerNameoption) -Wl,-Map=$(ProjectPath)/Lst/$(OutputFile).map  @$(ObjectsFileList) $(LibraryPathSwitch)D:/english_path_floder/remoter24g_0710/components/libraries $(LibraryPathSwitch)D:/english_path_floder/remoter24g_0710/components/libraries/24g/20260121/flash $(LibraryPathSwitch)D:/english_path_floder/remoter24g_0710/components/libraries/24g  -Wl,--whole-archive $(LibrarySwitch)startlib  $(LibrarySwitch)2g4_base  $(LibrarySwitch)rf2g4   -Wl,--no-whole-archive  $(LinkOptions) $(LibPath) $(Libs) $(LinkOtherFlagsOption)
+	$(LinkerName) $(OutputSwitch) $(IntermediateDirectory)/$(OutputFile)$(ExeSuffix) $(LinkerNameoption) -Wl,-Map=$(ProjectPath)/Lst/$(OutputFile).map  @$(ObjectsFileList) $(LibraryPathSwitch)D:/english_path_floder/remoter24g_0710/components/libraries $(LibraryPathSwitch)D:/english_path_floder/remoter24g_0710/components/libraries/24g/20260121/otp $(LibraryPathSwitch)D:/english_path_floder/remoter24g_0710/components/libraries/24g  -Wl,--whole-archive $(LibrarySwitch)startlib  $(LibrarySwitch)2g4_base  $(LibrarySwitch)rf2g4   -Wl,--no-whole-archive  $(LinkOptions) $(LibPath) $(Libs) $(LinkOtherFlagsOption)
 	-@mv $(ProjectPath)/Lst/$(OutputFile).map $(ProjectPath)/Lst/$(OutputFile).temp && $(READELF) $(ElfInfoSwitch) $(ProjectPath)/Obj/$(OutputFile)$(ExeSuffix) > $(ProjectPath)/Lst/$(OutputFile).map && echo ====================================================================== >> $(ProjectPath)/Lst/$(OutputFile).map && cat $(ProjectPath)/Lst/$(OutputFile).temp >> $(ProjectPath)/Lst/$(OutputFile).map && rm -rf $(ProjectPath)/Lst/$(OutputFile).temp
 	$(OBJCOPY) $(ObjcopySwitch) $(ProjectPath)/$(IntermediateDirectory)/$(OutputFile)$(ExeSuffix)  $(ProjectPath)/Obj/$(OutputFile)$(IHexSuffix) 
 	$(OBJDUMP) $(ObjdumpSwitch) $(ProjectPath)/$(IntermediateDirectory)/$(OutputFile)$(ExeSuffix)  > $(ProjectPath)/Lst/$(OutputFile)$(DisassemSuffix) 

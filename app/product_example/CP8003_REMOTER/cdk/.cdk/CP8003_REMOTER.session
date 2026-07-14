@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="D:\english_path_floder\remoter24g_0710\app\product_example\CP8003_REMOTER\cdk\CP8003_REMOTER.cdkws">
+  <int Value="0" Name="m_selectedTab"/>
+  <wxString Value="D:\english_path_floder\remoter24g_0710\app\product_example\CP8003_REMOTER\cdk\CP8003_REMOTER.cdkws" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray"/>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+</Session>

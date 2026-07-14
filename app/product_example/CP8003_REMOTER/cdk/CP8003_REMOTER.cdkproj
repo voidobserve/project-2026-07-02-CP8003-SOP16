@@ -67,7 +67,7 @@
       <File Name="../../../../components/core/cp800x_bootload.ld">
         <FileOption/>
       </File>
-      <File Name="../../../../components/core/e902_2g4_sleep.ld">
+      <File Name="../../../../components/core/cp800x_2g4_otp.ld">
         <FileOption/>
       </File>
     </VirtualDirectory>
@@ -193,7 +193,7 @@
         <File Name="../../../../components/libraries/24g/api_system.h">
           <FileOption/>
         </File>
-        <File Name="../../../../components/libraries/24g/20260121/flash/lib2g4_base.a">
+        <File Name="../../../../components/libraries/24g/20260121/otp/lib2g4_base.a">
           <FileOption/>
         </File>
         <File Name="../../../../components/libraries/24g/librf2g4.a">
@@ -346,7 +346,7 @@
         <Tools/>
       </User>
       <Compiler>
-        <Define>BOOT_OTP=0;</Define>
+        <Define>BOOT_OTP=1;</Define>
         <Undefine/>
         <Optim>Optimize size (-Os)</Optim>
         <DebugLevel>Default (-g)</DebugLevel>
@@ -374,7 +374,7 @@
       <Linker>
         <Garbage>yes</Garbage>
         <Garbage2>yes</Garbage2>
-        <LDFile>$(ProjectPath)/../../../components/core/e902_2g4_sleep.ld</LDFile>
+        <LDFile>$(ProjectPath)/../../../components/core/cp800x_2g4_otp.ld</LDFile>
         <LibName/>
         <LibPath/>
         <OtherFlags>--specs=nano.specs</OtherFlags>

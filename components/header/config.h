@@ -23,7 +23,7 @@
 #define BLE_2G4_STACK_VER      (2)
 
 
-#define BOOT_OTP 1
+// #define BOOT_OTP 0 // 注意，是在编译器 Project Settigns -> Compiler -> Define 中定义的，不是在代码中定义的。
 #define LOG_ENABLE             (DISABLE)
 
 
